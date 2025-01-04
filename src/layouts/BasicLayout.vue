@@ -10,7 +10,9 @@
         <router-view />
       </a-layout-content>
       <a-layout-footer class="footer">
-        <a href="https://www.codefather.cn" target="_blank">编程导航 </a></a-layout-footer
+        <a href="https://www.codefather.cn" target="_blank" style="font-size: 16px"
+          >©2024 Created by CodeFather.cn
+        </a></a-layout-footer
       >
     </a-layout>
   </div>
@@ -21,7 +23,7 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
 </script>
 
 <style scoped>
-#basicLayout .header{
+#basicLayout .header {
   padding-inline: 20px;
   background: white;
   color: unset;
@@ -35,7 +37,7 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
 
 #basicLayout .footer {
   background: #efefef;
-  padding: 18px;
+  padding: 12px;
   position: fixed;
   bottom: 0;
   left: 0;
