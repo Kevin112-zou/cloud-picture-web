@@ -49,7 +49,7 @@
 import { computed, h, ref } from 'vue'
 import { HomeOutlined, LogoutOutlined } from '@ant-design/icons-vue'
 import { MenuProps, message } from 'ant-design-vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useLoginUserStore } from '@/stores/UseLoginUserStore.ts'
 import { userLogoutUsingPost } from '@/api/userController'
 
@@ -64,8 +64,8 @@ const originItems = [
   },
   {
     key: '/add_picture',
-    label: '创建图片',
-    title: '创建图片',
+    label: '上传图片',
+    title: '上传图片',
   },
   {
     key: '/admin/userMange',

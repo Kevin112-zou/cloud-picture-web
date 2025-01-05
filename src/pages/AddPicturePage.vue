@@ -1,7 +1,7 @@
 <template>
   <div id="addPicturePage" class="addPicturePage">
     <h2 style="margin-bottom: 16px">
-      {{ route.query?.id ? '修改图片' : '创建图片' }}
+      {{ route.query?.id ? '修改图片' : '上传图片' }}
     </h2>
     <!--图片上传组件-->
     <PictureUpload :picture="picture" :onSuccess="onSuccess" />
@@ -95,10 +95,9 @@ const handleSubmit = async (values: any) => {
 
   // 操作成功
   if (res.data.code === 0 && res.data.data) {
-    message.success('创建成功')
-    // todo: 跳转到详情页
+    message.success('操作成功')
     router.push({
-      path: '/picture/${pictureId}',
+      path: `/picture/${pictureId}`,
     })
   } else {
     message.error('创建失败, ' + res.data.message)
@@ -121,6 +120,8 @@ const getTagCategoryOptions = async () => {
     categoryOptions.value = (res.data.data.categories ?? []).map((data: string) => {
       return { value: data, label: data }
     })
+  } else {
+    message.error('获取分类和标签失败')
   }
 }
 
