@@ -47,7 +47,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, h, ref } from 'vue'
-import { HomeOutlined, LogoutOutlined } from '@ant-design/icons-vue'
+import { LogoutOutlined } from '@ant-design/icons-vue'
 import { MenuProps, message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 import { useLoginUserStore } from '@/stores/UseLoginUserStore.ts'
@@ -58,7 +58,6 @@ const loginUserStore = useLoginUserStore()
 const originItems = [
   {
     key: '/',
-    icon: () => h(HomeOutlined),
     label: '主页',
     title: '主页',
   },
