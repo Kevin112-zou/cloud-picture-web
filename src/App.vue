@@ -8,21 +8,21 @@
 
 <script setup lang="ts">
 import BasicLayout from '@/layouts/BasicLayout.vue'
-import { healthCheckUsingGet } from '@/api/mainController.ts'
 import { useLoginUserStore } from '@/stores/UseLoginUserStore.ts'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
+
 dayjs.locale('zh-cn')
 
 // 初始化用户信息
 const loginUserStore = useLoginUserStore()
-loginUserStore.fetchLoginUser()
+let res = loginUserStore.fetchLoginUser()
 
-healthCheckUsingGet().then((res) => {
-  console.log(res)
-})
+// healthCheckUsingGet().then((res) => {
+//   console.log(res)
+// })
 </script>
 
 <style scoped></style>

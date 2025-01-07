@@ -16,12 +16,13 @@ router.beforeEach(async (to, from, next) => {
     firstFetchLoginUser = false
   }
   const toUrl = to.fullPath
-  console.log('toUrl: ' + toUrl)
+  console.log('MytoUrl: ' + toUrl)
   // todo: 自定义权限校验逻辑； 比如：管理员才能访问 /admin 开头的页面
   if (toUrl.startsWith('/admin')) {
+    console.log('loginUser: ' + loginUser.userRole)
     if (!loginUser || loginUser.userRole !== 'admin') {
       message.error('您没有权限访问此页面')
-      next('/user/login?redirect=' + toUrl)
+      next(`/user/login?redirect=${to.fullPath}`)
       return
     }
   }
