@@ -1,5 +1,15 @@
 <template>
   <div id="PictureMangePage">
+    <a-flex justify="space-between">
+      <h2>图片管理</h2>
+      <a-space>
+        <a-button type="primary" href="/add_picture" target="_blank">+ 创建图片</a-button>
+        <a-button type="primary" href="/add_picture/batch" target="_blank" ghost
+          >+ 批量创建图片
+        </a-button>
+      </a-space>
+    </a-flex>
+
     <!--搜索框 -->
     <div class="search-form" style="margin-bottom: 16px">
       <a-form layout="inline" :model="searchParams" @finish="doSearch">
@@ -72,7 +82,7 @@
               审核状态：{{ PIC_REVIEW_STATUS_MAP[record.reviewStatus] }}
             </div>
             <div class="review-message">审核信息：{{ record.reviewMessage }}</div>
-            <div class="reviewer">审核人：{{ record.reviewerId }}</div>
+            <div class="reviewer">审核人id：{{ record.reviewerId }}</div>
             <div v-if="record.reviewTime" class="review-time">
               审核时间：{{ dayjs(record.reviewTime).format('YYYY-MM-DD HH:mm:ss') }}
             </div>
@@ -139,6 +149,7 @@ const columns = [
   {
     title: '图片',
     dataIndex: 'url',
+    width: 150,
   },
   {
     title: '名称',
@@ -160,15 +171,16 @@ const columns = [
   {
     title: '图片信息',
     dataIndex: 'picInfo',
+    width: 150,
   },
   {
     title: '审核信息',
     dataIndex: 'reviewInfo',
+    width: 180,
   },
   {
-    title: '用户 id',
-    dataIndex: 'PictureId',
-    width: 80,
+    title: '创建人id',
+    dataIndex: 'userId',
   },
   {
     title: '创建时间',

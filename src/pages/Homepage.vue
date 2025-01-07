@@ -49,13 +49,17 @@
             </template>
             <a-card-meta :title="picture.name">
               <template #description>
-                <a-flex>
-                  <a-tag color="green">
-                    {{ picture.category ?? '默认' }}
-                  </a-tag>
-                  <a-tag color="orange" v-for="tag in picture.tags" :key="tag">
-                    {{ tag }}
-                  </a-tag>
+                <a-flex justify="space-between">
+                  <a-flex>
+                    <a-tag :bordered="false" color="green">
+                      {{ picture.category ?? '默认' }}
+                    </a-tag>
+                  </a-flex>
+                  <a-flex>
+                    <a-tag color="orange" v-for="tag in picture.tags" :key="tag">
+                      {{ tag }}
+                    </a-tag>
+                  </a-flex>
                 </a-flex>
               </template>
             </a-card-meta>
@@ -75,11 +79,12 @@ import {
 } from '@/api/pictureController.ts'
 import { message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
+import { useLoginUserStore } from '@/stores/UseLoginUserStore.ts'
 
 const dataList = ref([])
 const total = ref(0)
 const loading = ref(true)
-
+const loginUserStore = useLoginUserStore()
 // 搜索条件
 const searchParams = reactive<API.PictureQueryRequest>({
   current: 1, // 当前页号
