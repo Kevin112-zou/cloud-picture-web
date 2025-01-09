@@ -68,9 +68,9 @@ const beforeUpload = (file: UploadProps['fileList'][number]) => {
     message.error('不支持上传该格式的图片！，推荐使用JPG/PNG/JEPG/WEBP格式的图片！')
   }
   // 校验图片大小
-  const isLt2M = file.size / 1024 / 1024 < 2
+  const isLt2M = file.size / 1024 / 1024 < 3
   if (!isLt2M) {
-    message.error('图片大小不能超过2MB！')
+    message.error('图片大小不能超过3MB！')
   }
   return isJpgOrPng && isLt2M
 }

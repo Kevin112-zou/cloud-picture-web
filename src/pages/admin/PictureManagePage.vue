@@ -185,6 +185,7 @@ const columns = [
   {
     title: '创建时间',
     dataIndex: 'createTime',
+    sorter: true,
   },
   {
     title: '编辑时间',

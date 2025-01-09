@@ -6,7 +6,7 @@
           <div class="title-bar">
             <img class="logo" src="../assets/logo.png" alt="logo" />
             <!-- alt作用：当图片加载不出来时可以显示文字-->
-            <div class="title">超级云图库</div>
+            <div class="title">SHARE-云图库</div>
           </div>
         </router-link>
       </a-col>
