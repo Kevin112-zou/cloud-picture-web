@@ -66,7 +66,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, h, ref } from 'vue'
-import { LogoutOutlined } from '@ant-design/icons-vue'
+import { HomeOutlined,LogoutOutlined,UploadOutlined,UserOutlined,PictureOutlined,GithubOutlined } from '@ant-design/icons-vue'
 import { MenuProps, message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 import { useLoginUserStore } from '@/stores/UseLoginUserStore.ts'
@@ -79,26 +79,31 @@ const originItems = [
     key: '/',
     label: '主页',
     title: '主页',
+    icon: () => h(HomeOutlined),
   },
   {
     key: '/add_picture',
     label: '上传图片',
     title: '上传图片',
+    icon: () => h(UploadOutlined),
   },
   {
     key: '/admin/userMange',
     label: '用户管理',
     title: '用户管理',
+    icon: () => h(UserOutlined),
   },
   {
     key: '/admin/pictureMange',
     label: '图片管理',
     title: '图片管理',
+    icon: () => h(PictureOutlined),
   },
   {
     key: '/others',
-    label: h('a', { href: 'https://www.codefather.cn', target: '_blank' }, '编程导航'),
-    title: '编程导航',
+    label: h('a', { href: 'https://github.com/Kevin112-zou/cloud-picture', target: '_blank' }, '项目地址'),
+    title: '项目地址',
+    icon: () => h(GithubOutlined),
   },
 ]
 // 过滤菜单项

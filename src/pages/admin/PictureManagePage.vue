@@ -281,20 +281,3 @@ const handleReview = async (record: API.Picture, reviewStatus: number) => {
   }
 }
 </script>
-<style scoped>
-.review-status {
-  color: #3498db; /* 示例：使用蓝色表示审核状态 */
-}
-
-.review-message {
-  color: #2ecc71; /* 示例：使用绿色表示审核信息 */
-}
-
-.reviewer {
-  color: #e74c3c; /* 示例：使用红色表示审核人 */
-}
-
-.review-time {
-  color: #9b59b6; /* 示例：使用紫色表示审核时间 */
-}
-</style>

@@ -38,12 +38,12 @@
     >
       <template #renderItem="{ item: picture }">
         <a-list-item style="padding: 0">
-          <!-- 单张图片 -->
+          <!-- 单张图片  优化方法 :src="picture.thumbnailUrl ?? picture.url" -->
           <a-card hoverable @click="doClickPicture(picture)">
             <template #cover>
               <img
                 :alt="picture.name"
-                :src="picture.thumbnailUrl ?? picture.url"
+                :src="picture.url"
                 style="height: 180px; object-fit: cover"
               />
             </template>
